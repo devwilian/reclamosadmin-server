@@ -7,16 +7,13 @@ const cors = require('cors');
 //crear el servidor de express
 const app = express();
 app.use(cors());
+app.use(express.json());
 //accesos mongodb
 dbConection();
 
 //Router
-app.get('/',(req,res)=>{
-    res.json({
-        ok:true,
-        msg:'Hola Mundo'
-    })
-})
+app.use('/api/usuarios',require('./routes/usuario.route'));
+app.use('/api/login',require('./routes/auth.route'));
 //Settings servidor
 app.set('port',process.env.PORT || 3000);
 //Starting servers
