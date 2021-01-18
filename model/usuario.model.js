@@ -2,8 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const UsuarioSchema = Schema({
     apellidos:{
-        type:String,
-        required:true,
+        type:String
     },
     nombres:{
         type:String,

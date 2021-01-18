@@ -16,7 +16,6 @@ router.post(
     '/', 
     validarJWT,
     [
-        check('apellidos','Los apellidos son obligatorios!').not().isEmpty(),
         check('nombres','Los nombres son obligatorios!').not().isEmpty(),
         check('password','La contraseña es obligatorio!').not().isEmpty(),
         check('email','El correo es obligatorio!').isEmail(),
@@ -29,7 +28,6 @@ router.put(
     '/:id',
     validarJWT,
     [
-        check('apellidos','Los apellidos son obligatorios!').not().isEmpty(),
         check('nombres','Los nombres son obligatorios!').not().isEmpty(),
         check('role','El role es obligatorio!').not().isEmpty(),
         validarCampos

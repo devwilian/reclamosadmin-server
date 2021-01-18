@@ -11,6 +11,9 @@ app.use(express.json());
 //accesos mongodb
 dbConection();
 
+//Directorio publico
+app.use(express.static('public'));
+
 //Router
 app.use('/api/usuarios',require('./routes/usuario.route'));
 app.use('/api/login',require('./routes/auth.route'));
